@@ -1,12 +1,27 @@
 Package: ZamanianLabVSTools
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: A Set of Tools and Metrics for Analyzing and Evaluating Virtual Screening Data
+Version: 0.1.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Nic", "Wheeler", , "nicolas.j.wheeler@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-5909-4190"))
+Description: Virtual screening data can be analyzed in a variety of different ways. The 
+    functions included here are helpful utilities for virtual screening data analysis
+    performed by the Zamanian Lab at UW-Madison.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    dplyr,
+    modeldata,
+    yardstick
+Suggests: 
+    dials,
+    broom,
+    infer,
+    parsnip,
+    recipes,
+    rsample,
+    tune,
+    workflows,
+    workflowsets
