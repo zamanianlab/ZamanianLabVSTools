@@ -25,3 +25,5 @@ Suggests:
     tune,
     workflows,
     workflowsets
+URL: https://github.com/wheelern/ZamanianLabVSTools
+BugReports: https://github.com/wheelern/ZamanianLabVSTools/issues
