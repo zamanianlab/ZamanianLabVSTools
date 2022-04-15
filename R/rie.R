@@ -39,9 +39,10 @@ finalize_estimator_internal.rie <- function(metric_dispatcher, x, estimator) {
 #'
 #' @seealso
 #'
-#' [ef()] for computing the enrichment factor and [bedroc()] for computing the Boltzmann-enhanced discrimination ROC.
+#' [ef()] for computing the enrichment factor and [rie()] for computing the Boltzmann-enhanced discrimination ROC.
 #'
 #' @export
+
 rie <- function(data, ...) {
   UseMethod("rie")
 }
@@ -50,13 +51,13 @@ rie <- yardstick::new_prob_metric(rie, direction = "maximize")
 
 #' @rdname rie
 #' @export
-rie <- function(data,
-                truth,
-                ...,
-                alpha = 20,
-                estimator = NULL,
-                na_rm = TRUE,
-                event_level = "first") {
+rie.data.frame <- function(data,
+                           truth,
+                           ...,
+                           alpha = 20,
+                           estimator = NULL,
+                           na_rm = TRUE,
+                           event_level = "first") {
   estimate <- yardstick::dots_to_estimate(data, !!!enquos(...))
 
   yardstick::metric_summarizer(
@@ -75,11 +76,11 @@ rie <- function(data,
 #' @export
 #' @rdname rie
 rie_vec <- function(truth,
-                       estimate,
-                       alpha = 20,
-                       estimator = NULL,
-                       event_level = "first",
-                       na_rm = TRUE) {
+                    estimate,
+                    alpha = 20,
+                    estimator = NULL,
+                    event_level = "first",
+                    na_rm = TRUE) {
   estimator <- yardstick::finalize_estimator(truth, estimator, metric_class = "rie")
 
   rie_impl <- function(truth, estimate, alpha = 20) {

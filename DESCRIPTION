@@ -29,3 +29,6 @@ Suggests:
 URL: https://github.com/wheelern/ZamanianLabVSTools
 BugReports: https://github.com/wheelern/ZamanianLabVSTools/issues
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+LazyData: true

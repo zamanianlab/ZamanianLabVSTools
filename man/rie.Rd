@@ -2,20 +2,13 @@
 % Please edit documentation in R/rie.R
 \name{rie}
 \alias{rie}
+\alias{rie.data.frame}
 \alias{rie_vec}
 \title{Implementation of the Robust Initial Enhancement score.}
 \usage{
-rie(
-  data,
-  truth,
-  ...,
-  alpha = 20,
-  estimator = NULL,
-  na_rm = TRUE,
-  event_level = "first"
-)
+rie(data, ...)
 
-rie(
+\method{rie}{data.frame}(
   data,
   truth,
   ...,
@@ -37,9 +30,9 @@ rie_vec(
 \arguments{
 \item{data}{A data.frame containing the truth and estimate columns.}
 
-\item{truth}{The column identifier for the true class results (that is a factor). This should be an unquoted column name although this argument is passed by expression and supports quasiquotation (you can unquote column names). For _vec() functions, a factor vector.}
-
 \item{...}{A set of unquoted column names or one or more dplyr selector functions to choose which variables contain the class probabilities. If truth is binary, only 1 column should be selected. Otherwise, there should be as many columns as factor levels of truth.}
+
+\item{truth}{The column identifier for the true class results (that is a factor). This should be an unquoted column name although this argument is passed by expression and supports quasiquotation (you can unquote column names). For _vec() functions, a factor vector.}
 
 \item{alpha}{The early recognition parameter (defaults to 20 or as in enrichvs::rie())}
 
@@ -63,5 +56,5 @@ Calculates a metric often used in virtual screening - Robust Initial Enhancement
 Sheridan RP, Singh SB, Fluder EM, Kearsley SK. Protocols for bridging the peptide to nonpeptide gap in topological similarity searches. J Chem Inf Comput Sci. 2001 Sep;41(5):1395–406.
 }
 \seealso{
-\code{\link[=ef]{ef()}} for computing the enrichment factor and \code{\link[=bedroc]{bedroc()}} for computing the Boltzmann-enhanced discrimination ROC.
+\code{\link[=ef]{ef()}} for computing the enrichment factor and \code{\link[=rie]{rie()}} for computing the Boltzmann-enhanced discrimination ROC.
 }

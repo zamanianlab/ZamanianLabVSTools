@@ -2,6 +2,7 @@
 
 S3method(bedroc,data.frame)
 S3method(ef,data.frame)
+S3method(rie,data.frame)
 export(bedroc)
 export(bedroc_vec)
 export(ef)

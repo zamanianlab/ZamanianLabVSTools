@@ -42,6 +42,7 @@ finalize_estimator_internal.bedroc <- function(metric_dispatcher, x, estimator) 
 #' [ef()] for computing the enrichment factor.
 #'
 #' @export
+
 bedroc <- function(data, ...) {
   UseMethod("bedroc")
 }
